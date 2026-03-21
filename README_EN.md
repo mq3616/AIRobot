@@ -1,10 +1,12 @@
 # AIRobot
 
+[中文](./README.md) | [English](./README_EN.md)
+
 AIRobot is an ESP32-S3-based embedded AI robot project that combines voice interaction, facial/status display, music playback, and a desktop control console into one practical prototype workflow.
 
 ## Background
 
-The project is designed for a hybrid model: lightweight local hardware plus cloud AI services.
+The project follows a hybrid model: lightweight local hardware plus cloud AI services.
 
 Instead of building a purely software assistant, AIRobot focuses on a complete device-side interaction loop:
 
@@ -12,7 +14,7 @@ Instead of building a purely software assistant, AIRobot focuses on a complete d
 - the cloud side handles higher-cost capabilities such as chat and text-to-speech
 - the desktop side provides a visual control console for flashing, log monitoring, and command sending
 
-The goal is not to build a huge general-purpose platform first. The goal is to make a robot that can already speak, play, react, and be iterated on quickly.
+The goal is not to build a huge platform first. The goal is to make a robot that can already speak, play, react, and be iterated on quickly.
 
 ## Project Overview
 
@@ -34,24 +36,32 @@ Typical supported interactions include:
 - changing playback parameters such as volume and accompaniment while music is playing
 - flashing firmware, watching logs, and sending commands from the desktop GUI
 
-## Technical Stack
+## Current Hardware List
 
-- MCU: ESP32-S3 DevKitC-1
-- Firmware framework: Arduino
-- Build system: PlatformIO
-- Display: Adafruit SSD1306 + RoboEyes
-- Audio: I2S input/output pipeline
-- Desktop tool: Python + Tkinter + pyserial
+The current AIRobot setup uses:
 
-## Repository Layout
+- `ESP32-S3 DevKitC-1-N8`
+- `INMP441` I2S microphone
+- `MAX98357A` I2S amplifier
+- `0.96"` `128x64` I2C OLED display
+- small speaker
+- USB data cable
 
-- [src](/d:/Projects/AIRobot/src)
-- [include](/d:/Projects/AIRobot/include)
-- [scripts](/d:/Projects/AIRobot/scripts)
-- [assets](/d:/Projects/AIRobot/assets)
-- [docs](/d:/Projects/AIRobot/docs)
+The default pin mapping is defined in [include/app_config.h](./include/app_config.h):
 
-## API Key and Local Configuration
+- microphone: `GPIO4 / GPIO5 / GPIO6`
+- OLED: `GPIO8 / GPIO9`
+- amplifier: `GPIO7 / GPIO15 / GPIO16`
+
+## Quick Start
+
+### 1. Prepare the environment
+
+- install `Python`
+- install `PlatformIO`
+- connect the development board to your computer
+
+### 2. Configure WiFi and API key
 
 Real secrets are not committed to the repository. These local-only files are already ignored:
 
@@ -60,8 +70,7 @@ Real secrets are not committed to the repository. These local-only files are alr
 - `.serial_console_gui.json`
 
 The recommended setup is environment-variable-based injection. The build helper
-[scripts/inject_secrets.py](/d:/Projects/AIRobot/scripts/inject_secrets.py)
-automatically reads:
+[scripts/inject_secrets.py](./scripts/inject_secrets.py) automatically reads:
 
 - `WIFI_SSID`
 - `WIFI_PASSWORD`
@@ -77,14 +86,87 @@ $env:OPENAI_API_KEY="sk-..."
 ```
 
 If you prefer a local fallback, copy
-[include/app_secrets.example.h](/d:/Projects/AIRobot/include/app_secrets.example.h)
+[include/app_secrets.example.h](./include/app_secrets.example.h)
 to `include/app_secrets.h` and fill in your local values. That file is ignored by Git and will not be pushed.
+
+### 3. Build the project
+
+```powershell
+& "$env:USERPROFILE\.platformio\penv\Scripts\python.exe" -m platformio run -e esp32-s3-devkit
+```
+
+## Flashing
+
+### Via PlatformIO CLI
+
+```powershell
+& "$env:USERPROFILE\.platformio\penv\Scripts\python.exe" -m platformio run -e esp32-s3-devkit -t upload --upload-port COM3
+```
+
+### Via AIRobot Console
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\open_serial_console_gui.ps1
+```
+
+The GUI supports:
+
+- automatic serial connection
+- command sending
+- log viewing
+- closing the serial connection before upload
+- reopening the console after a successful flash
+
+More details are available in [docs/serial-console-gui.md](./docs/serial-console-gui.md).
+
+## Serial Commands
+
+Common serial commands include:
+
+- `help`: show help
+- `wifi`: print WiFi status
+- `mem`: print memory status
+- `profile`: print the current user / robot profile
+- `beep`: play a test tone
+- `ask <text>`: call chat and automatically speak the reply
+- `say <text>`: call TTS directly
+- `volume`: print the current playback volume
+- `volume <0-100>`: set the playback volume
+- `accomp`: print the current music-box accompaniment status
+- `accomp on`: enable music-box accompaniment
+- `accomp off`: disable music-box accompaniment
+- `melody canon musicbox`
+- `melody tori musicbox`
+- `melody truth musicbox`
+- `melody juebieshu musicbox`
+- `melody qifeng musicbox`
+- `melody sinian musicbox`
+- `melody stop`
+
+For the full runtime command flow, see [src/main.cpp](./src/main.cpp).
+
+## Technical Stack
+
+- MCU: ESP32-S3 DevKitC-1
+- Firmware framework: Arduino
+- Build system: PlatformIO
+- Display: Adafruit SSD1306 + RoboEyes
+- Audio: I2S input/output pipeline
+- Desktop tool: Python + Tkinter + pyserial
+
+## Repository Layout
+
+- [src](./src)
+- [include](./include)
+- [scripts](./scripts)
+- [assets](./assets)
+- [docs](./docs)
 
 ## Related Docs
 
-- Serial console GUI: [docs/serial-console-gui.md](/d:/Projects/AIRobot/docs/serial-console-gui.md)
-- Bailian chat integration: [docs/bailian-chat.md](/d:/Projects/AIRobot/docs/bailian-chat.md)
-- Bailian TTS integration: [docs/bailian-tts.md](/d:/Projects/AIRobot/docs/bailian-tts.md)
+- Serial console GUI: [docs/serial-console-gui.md](./docs/serial-console-gui.md)
+- Bailian chat integration: [docs/bailian-chat.md](./docs/bailian-chat.md)
+- Bailian TTS integration: [docs/bailian-tts.md](./docs/bailian-tts.md)
 
 ## Current Positioning
 
@@ -99,4 +181,4 @@ AIRobot currently works well as:
 
 - Local secrets, serial preferences, and temporary debug artifacts are intentionally excluded from the repository
 - The project is still evolving quickly, including firmware behavior, songs, desktop tooling, and timbre tuning
-- For the Chinese version, see [README.md](/d:/Projects/AIRobot/README.md)
+- For the Chinese version, see [README.md](./README.md)
