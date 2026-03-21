@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" hreflang="zh" href="https://www.midishow.com/site/error?nouse=%2F2%2F1jevABrosvD_ptIwxWeuTQwK34b8Z-Qm.&token=72626cc33a0dee470e3f2cc9b46c549d" />
+    <link rel="alternate" hreflang="zh-tw" href="https://www.midishow.com/zh-tw/site/error?nouse=%2F2%2F1jevABrosvD_ptIwxWeuTQwK34b8Z-Qm.&token=72626cc33a0dee470e3f2cc9b46c549d" />
+    <link rel="alternate" hreflang="en" href="https://www.midishow.com/en/site/error?nouse=%2F2%2F1jevABrosvD_ptIwxWeuTQwK34b8Z-Qm.&token=72626cc33a0dee470e3f2cc9b46c549d" />
+    <link rel="alternate" hreflang="x-default" href="https://www.midishow.com/site/error?nouse=%2F2%2F1jevABrosvD_ptIwxWeuTQwK34b8Z-Qm.&token=72626cc33a0dee470e3f2cc9b46c549d" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+    <title>Forbidden (#403)</title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-21955665-1"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-21955665-1'); </script>
+        <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="y99Y4X3WocT-s9puItUw1bnk9uJraIgn1jqfMsFkRIuM6CrUEqfqrb3rvF5SpGOP_JOugDhb_1O-XN1xnjwp2Q==">
+    <link href="https://s.midishow.net/static/vendor/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
+<link href="https://s.midishow.net/static/vendor/animate.css/animate.min.css" rel="stylesheet">
+<link href="https://s.midishow.net/static/css/g-fonts-poppins.css" rel="stylesheet">
+<link href="https://s.midishow.net/static/css/theme-12df15dfc2.min.css" rel="stylesheet">
+<link href="https://s.midishow.net/static/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet">
+<link href="https://s.midishow.net/static/vendor/slick-carousel/slick/slick.css" rel="stylesheet"></head>
+<body>
+    
+    <!-- ========== HEADER ========== -->
+<header class="u-header  u-header--show-hide-md" data-header-fix-moment="500" data-header-fix-effect="slide">        <!-- Search -->
+        <div id="searchPushTop" class="u-search-push-top">
+            <div class="container position-relative">
+                <div class="u-search-push-top__content">
+                    <!-- Close Button -->
+                    <button type="button" class="close u-search-push-top__close-btn"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            aria-controls="searchPushTop"
+                            data-unfold-type="jquery-slide"
+                            data-unfold-target="#searchPushTop">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- End Close Button -->
+
+                    <!-- Input -->
+                    <form class="js-focus-state input-group input-group-lg" action="/search/result" method="get">
+                        <input type="search" name="q" class="form-control" placeholder="搜索" aria-label="搜索">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">搜索</button>
+                        </div>
+                    </form>
+                    <!-- End Input -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- End Search -->
+
+        <div class="u-header__section">
+            <!-- Topbar -->
+            <div class="container u-header__hide-content pt-2">
+                <div class="d-flex align-items-center">
+
+                    <!-- Language -->
+                    <div class="position-relative">
+                        <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center"
+                           href="javascript:;" role="button"
+                           aria-controls="languageDropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false"
+                           data-unfold-event="hover"
+                           data-unfold-target="#languageDropdown"
+                           data-unfold-type="css-animation"
+                           data-unfold-duration="300"
+                           data-unfold-delay="300"
+                           data-unfold-hide-on-scroll="true"
+                           data-unfold-animation-in="slideInUp"
+                           data-unfold-animation-out="fadeOut">
+                            <span class="fa fa-globe"></span>&nbsp;
+                            <span class="d-inline-block d-sm-none">中文（简体）</span>
+                            <span class="d-none d-sm-inline-block">中文（简体）</span>
+                        </a>
+
+                        <div id="languageDropdown" class="dropdown-menu dropdown-unfold"
+                             aria-labelledby="languageDropdownInvoker">
+                                                            <a href="/zh/site/error?nouse=%2F2%2F1jevABrosvD_ptIwxWeuTQwK34b8Z-Qm.&token=72626cc33a0dee470e3f2cc9b46c549d" class="dropdown-item active">中文（简体）</a>
+                                                            <a href="/zh-tw/site/error?nouse=%2F2%2F1jevABrosvD_ptIwxWeuTQwK34b8Z-Qm.&token=72626cc33a0dee470e3f2cc9b46c549d" class="dropdown-item ">中文（繁体）</a>
+                                                            <a href="/en/site/error?nouse=%2F2%2F1jevABrosvD_ptIwxWeuTQwK34b8Z-Qm.&token=72626cc33a0dee470e3f2cc9b46c549d" class="dropdown-item ">English</a>
+                                                    </div>
+                    </div>
+                    <!-- End Language -->
+
+                    <div class="ml-auto">
+                        <!-- Jump To -->
+
+                        <!-- End Jump To -->
+
+                        <!-- Links -->
+                        <div class="d-none d-sm-inline-block ml-sm-auto">
+                            <ul class="list-inline mb-0">
+
+                                <li class="list-inline-item mr-0">
+                                    <a class="u-header__navbar-link" href="/user/midi/create">上传 MIDI 音乐</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Links -->
+                    </div>
+
+                    <ul class="list-inline ml-2 mb-0">
+
+                        <li class="list-inline-item d-md-none">
+                            <a class="btn btn-xs btn-icon btn-text-secondary mx-2" href="javascript:;" role="button" title="搜索" aria-haspopup="true" aria-expanded="false" aria-controls="searchPushTop" data-unfold-type="jquery-slide" data-unfold-target="#searchPushTop">
+                                <span class="fas fa-search btn-icon__inner"></span>
+                            </a>
+                        </li>
+
+                        
+                        <!-- Account Login -->
+                        <li class="list-inline-item">
+
+                                                        <!-- Account Sidebar Toggle Button -->
+                                <a class="u-header__navbar-link" href="/user/account/login">
+                                    <span class="fas fa-user-circle mr-1"></span>
+                                    登录                                </a>
+
+                                                    </li>
+                        <!-- End Account Login -->
+                    </ul>
+                </div>
+            </div>
+            <!-- End Topbar -->
+
+            <div id="logoAndNav" class="container">
+                <!-- Nav -->
+                <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
+                    <!-- Logo -->
+                    <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="/"
+                       aria-label="Front">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 652 126" preserveAspectRatio="xMinYMin meet" style="enable-background:new 0 0 150 33;" width="150" height="33" xml:space="preserve">
+<style type="text/css">
+    .st0{fill:#33AAE5;}
+    .st1{fill:#FFFFFF;}
+    .st2{fill:#666666;}
+    .st3{fill:#41CC33;}
+    .st4{fill:none;}
+</style>
+                            <g>
+                                <path class="st4" d="M609.9,113.6c-1,0-1.9,0.4-2.6,1.3s-1.1,2.1-1.1,3.8c0,1.6,0.2,2.8,0.7,3.5c0.7,1.2,1.7,1.8,2.9,1.8
+		c1,0,1.9-0.4,2.6-1.3s1.1-2.2,1.1-3.9c0-1.8-0.3-3.1-1-3.9C611.7,114,610.8,113.6,609.9,113.6z"/>
+                                <path class="st4" d="M122.9,46c-6.1-7.3-12.9-13.4-20.4-18.2c-7.5-4.8-15.8-8.5-25-11c-10.5-2.9-19.9-3.6-28.3-2
+		c-9.8,1.8-17.3,6.6-22.2,14.3c-4,6.2-5.4,13.4-4.3,21.6c0.9,7,3.5,14,7.8,21L49,42.8c0.8-1.2,1.9-2,3.3-2.3
+		c1.4-0.3,2.7-0.1,3.9,0.7l0.4,0.3c1.2,0.8,2,1.9,2.3,3.3c0.3,1.4,0.1,2.7-0.7,3.9L37.4,81.1c5.6,6.6,12.2,12.3,19.9,17.2
+		c7.7,4.9,15.6,8.5,23.9,10.9L101.8,77c0.8-1.2,1.9-2,3.3-2.3c1.4-0.3,2.7-0.1,3.9,0.7l0.4,0.3c1.2,0.8,2,1.9,2.3,3.3
+		c0.3,1.4,0,2.7-0.7,4l-18.4,28.7c8.2,1,15.7,0.4,22.4-1.7c7.9-2.4,13.8-6.7,17.8-12.9c5-7.8,6.2-16.5,3.7-26.2
+		C134.4,62.6,129.9,54.3,122.9,46z"/>
+                                <path class="st4" d="M624.1,113.6c-1,0-1.9,0.4-2.6,1.1c-0.7,0.7-1.1,1.6-1.2,2.8h7.5c-0.1-1.1-0.4-2-0.9-2.6
+		C626.2,114,625.3,113.6,624.1,113.6z"/>
+                                <path class="st4" d="M346.5,66.2c-3.8-3.4-8.3-5-13.5-4.6c-3.7,0.3-7.3,1.9-10.5,4.7c-3.3,2.9-4.9,6.6-4.9,11
+		c0,5.2,1.5,9.2,4.6,11.9c3.1,2.8,6.3,4.3,9.7,4.4c5.3,0.1,10-1.5,14.1-5.1c4.1-3.5,6.2-7.2,6.2-11.1
+		C352.1,73.4,350.3,69.6,346.5,66.2z"/>
+                                <path class="st4" d="M643.1,120.1c-0.4,0.2-0.7,0.4-0.9,0.7s-0.3,0.7-0.3,1.1c0,0.6,0.2,1.1,0.7,1.5c0.5,0.4,1.1,0.6,2,0.6
+		c0.9,0,1.7-0.2,2.3-0.6s1.2-0.9,1.5-1.6c0.2-0.5,0.4-1.3,0.4-2.3v-0.8c-0.8,0.3-2.1,0.6-3.7,0.9
+		C644.2,119.7,643.5,119.9,643.1,120.1z"/>
+                                <path class="st0" d="M80,0C35.8,0,0,28.2,0,63s35.8,63,80,63s80-28.2,80-63S124.2,0,80,0z M132.8,97c-4,6.2-9.9,10.5-17.8,12.9
+		c-6.7,2.1-14.2,2.6-22.4,1.7L111,82.9c0.8-1.2,1-2.5,0.7-4c-0.3-1.4-1-2.5-2.3-3.3l-0.4-0.3c-1.2-0.8-2.5-1-3.9-0.7
+		c-1.4,0.3-2.5,1.1-3.3,2.3l-20.6,32.2c-8.3-2.3-16.3-5.9-23.9-10.9c-7.7-4.9-14.3-10.7-19.9-17.2l20.8-32.4c0.8-1.2,1-2.5,0.7-3.9
+		c-0.3-1.4-1.1-2.5-2.3-3.3l-0.4-0.3c-1.2-0.8-2.5-1-3.9-0.7c-1.4,0.3-2.5,1.1-3.3,2.3L30.5,71.7c-4.3-7.1-6.9-14.1-7.8-21
+		c-1.1-8.2,0.3-15.3,4.3-21.6c5-7.8,12.4-12.5,22.2-14.3c8.4-1.5,17.8-0.9,28.3,2c9.2,2.5,17.6,6.2,25,11
+		c7.5,4.8,14.3,10.9,20.4,18.2c7,8.3,11.6,16.6,13.6,24.9C139,80.5,137.8,89.3,132.8,97z"/>
+                                <path class="st2" d="M268.8,27c-0.3-1.4-0.5-2.1-0.8-2.1c-0.2,0-0.8,0.6-1.6,1.9L230.5,88l-35.8-60.8c-0.9-1.4-1.5-2.1-1.7-2.1
+		c-0.3,0-0.5,0.8-0.8,2.2l-12.3,68.9c-1.2,2.7-1,4,0.8,4.2c1.7,0.1,2.7-0.7,2.8-2.5l14.1-51.6l33,49.4L265,46.4l12,51.2
+		c0.3,2.4,1.3,3.2,2.8,2.4c1.5-0.8,1.9-1.8,1.2-2.9L268.8,27z"/>
+                                <path class="st2" d="M295.7,55.5c-1.2,0.1-2.1,0.4-2.7,1.1c-0.6,0.6-0.9,1.6-0.9,2.8l1.5,40.7c0,1.5,0.5,2.2,1.5,2.2
+		c1,0,1.6-0.6,2-1.9l2.8-41.1c0.1-1.5-0.2-2.6-0.9-3.2C298.3,55.6,297.2,55.4,295.7,55.5z"/>
+                                <path class="st2" d="M293.8,39.5c0.6,0.4,1.4,0.7,2.2,0.7c1.2-0.1,2-0.5,2.6-1c0.5-0.5,0.9-1.1,0.9-1.9l0.2-1.8
+		c0.1-1.2-0.1-2-0.7-2.5c-0.6-0.5-1.6-0.8-3-0.8c-1.3,0-2.3,0.2-2.9,0.7c-0.6,0.4-0.9,1.2-0.9,2.2l0.4,2.8
+		C292.9,38.5,293.2,39.1,293.8,39.5z"/>
+                                <path class="st2" d="M356.9,21.1c-1.6,0.2-2.8,0.6-3.6,1.3c-0.8,0.7-1.2,1.7-1.1,3.1l1.2,45.1c-2.9-7.3-6.2-11.8-9.9-13.4
+		c-3.7-1.7-7.5-2.5-11.5-2.5c-6.8,0-12.2,2.2-16.3,6.6c-4.1,4.4-6.1,10-6.2,16.7c-0.1,7,1.8,12.7,5.7,17.2c3.8,4.4,8.8,6.6,14.9,6.6
+		c3.9,0,7.9-1,12-3c4-2,7.7-6.5,11.1-13.6l0.5,14.5c0.2,1.8,0.8,2.7,1.8,2.7c1,0,1.7-0.7,2.1-2.3l2.3-73.5c0.1-2-0.1-3.4-0.7-4.3
+		C358.8,21.4,358,21,356.9,21.1z M346,88.5c-4.1,3.5-8.8,5.2-14.1,5.1c-3.4-0.1-6.6-1.6-9.7-4.4c-3.1-2.8-4.6-6.8-4.6-11.9
+		c0-4.4,1.6-8.1,4.9-11c3.3-2.9,6.8-4.5,10.5-4.7c5.2-0.3,9.8,1.2,13.5,4.6c3.8,3.4,5.7,7.2,5.7,11.3C352.1,81.3,350.1,85,346,88.5z
+		"/>
+                                <path class="st2" d="M379.2,55.5c-1.2,0.1-2.1,0.4-2.7,1.1c-0.6,0.6-0.9,1.6-0.9,2.8l1.5,40.7c0,1.5,0.5,2.2,1.5,2.2
+		c1,0,1.7-0.6,2-1.9l2.8-41.1c0.1-1.5-0.2-2.6-0.9-3.2C381.8,55.6,380.7,55.4,379.2,55.5z"/>
+                                <path class="st2" d="M377.4,39.5c0.6,0.4,1.4,0.7,2.2,0.7c1.2-0.1,2-0.5,2.6-1c0.5-0.5,0.9-1.1,0.9-1.9l0.2-1.8
+		c0.1-1.2-0.1-2-0.7-2.5c-0.6-0.5-1.6-0.8-3-0.8c-1.3,0-2.3,0.2-2.9,0.7c-0.6,0.4-0.9,1.2-0.9,2.2l0.4,2.8
+		C376.4,38.5,376.8,39.1,377.4,39.5z"/>
+                                <path class="st2" d="M441.1,68.7c-3.2-2.9-7.6-5.6-13.3-8.1c-6.2-2.9-11.4-5.4-15.7-7.5c-4.3-2.1-6.4-5.1-6.4-8.8
+		c0-4.2,1.6-7.4,4.7-9.8c3.2-2.3,6.7-3.5,10.6-3.5c4.4,0,8.4,0.5,11.8,1.6c3.4,1.1,6.4,2.5,9,4.3c0.7,0.6,1.4,0.5,2.3-0.4
+		c0.8-0.8,0.9-1.7,0.2-2.6c-3.1-2.5-6.4-4.9-9.9-7c-3.5-2.2-8-3.3-13.7-3.3c-7.1,0-12.9,2-17.4,6c-4.5,4-6.8,9.1-6.8,15.1
+		c0,3.6,1.4,6.9,4.1,9.9c2.8,3,8.5,6.2,17.1,9.7c5.7,2.2,10.4,4.6,14.2,7.1c3.8,2.5,5.7,5.4,5.7,8.7c0,5.6-2.2,9.6-6.5,12
+		c-4.4,2.4-9,3.6-13.9,3.6c-4.6,0-8.6-0.4-11.8-1.1c-3.2-0.7-5.8-1.5-7.6-2.5c-0.9-0.4-1.5,0-1.9,1.2c-0.4,1.2,0.1,2.3,1.4,3.2
+		c2.2,1.3,5,2.7,8.6,4.3c3.5,1.6,7.6,2.4,12.3,2.5c7.5,0.1,14-1.8,19.5-5.7c5.5-3.9,8.2-9.8,8.2-17.9
+		C445.9,75.3,444.3,71.6,441.1,68.7z"/>
+                                <path class="st2" d="M488.1,55c-3.4,0-7.3,0.9-11.5,2.6c-4.3,1.7-8.4,5.7-12.3,11.8l1-43.4c0.1-1.5-0.1-2.7-0.4-3.5
+		c-0.3-0.8-1.5-1.1-3.4-0.8c-1.4,0.1-2.5,0.5-3.3,1.2c-0.8,0.7-1.1,1.8-1,3.1l2.1,74.1c0,1.5,0.7,2.1,2.1,1.8
+		c1.4-0.3,2.1-1.2,2.1-2.8l0.7-22.4c-0.6-3.2,1.4-6.5,6-10c4.6-3.5,8.2-5.2,10.7-5.2c5,0,8.4,1.1,10,3.3c1.6,2.2,2.6,6,3,11.4
+		l1.7,23.8c0,1.3,0.6,1.9,1.8,1.7c1.2-0.1,1.8-1,1.8-2.6l2.5-27.2c0.1-6.1-1.4-10.4-4.3-13.1C494.6,56.3,491.5,55,488.1,55z"/>
+                                <path class="st2" d="M546.3,57.7c-1-0.2-1.6,0-1.8,0.7c-0.3,0.6,0.2,1.2,1.4,1.8c11.4,5,15.6,12.2,12.8,21.5
+		c-2.9,9.3-9.7,14-20.4,14c-11.4,0-17.6-5.8-18.6-17.3c-1.1-11.5,5.5-20,19.6-25.4c2.9-1.2,4.3-2.1,4.1-2.7
+		c-0.2-0.6-1.1-0.9-2.9-0.7c-8.6,2-15.6,5.5-21.1,10.4c-5.5,4.9-8.2,10.9-8.2,18.2c0.1,8,2.3,13.9,6.7,17.6
+		c4.4,3.7,10.9,5.7,19.5,5.9c8.3,0.3,15.2-1.8,20.6-6.1c5.4-4.3,8.2-10.4,8.2-18.2c0-4.2-1.6-8.2-4.7-12
+		C558.2,61.5,553.1,58.9,546.3,57.7z"/>
+                                <path class="st2" d="M620.6,95.5c0.3,0.7,0.6,1.2,1,1.5s0.9,0.5,1.4,0.6c1,0.1,1.8,0.1,2.4-0.2c0.6-0.2,1-0.8,1.3-1.7l15.1-39.1
+		c0.5-1.3,0.4-2.3-0.1-3.1c-0.5-0.7-1.5-1.3-2.9-1.5c-1.4-0.3-2.6-0.2-3.4,0.4c-0.8,0.5-1.4,1.4-1.7,2.8l-10.4,34.2L609.5,53
+		c0.1-1-0.6-1.5-2.1-1.5c-1.5,0-2.3,0.3-2.4,1l-14,37l-11.5-35.7c-0.2-0.9-0.6-1.4-1.3-1.7c-0.7-0.2-1.7-0.2-3.1,0.1
+		c-1.5,0.3-2.6,0.8-3.2,1.6c-0.6,0.8-0.7,1.8-0.3,3.1l14.5,38.2c0.4,1.1,0.9,1.9,1.6,2.3c0.6,0.5,1.4,0.7,2.2,0.7
+		c0.7,0,1.4-0.2,2-0.7c0.6-0.4,1.1-1.2,1.5-2.2l13.7-34.3L620.6,95.5z"/>
+                                <polygon class="st3" points="532,88.6 554,75.9 532,63.2 	"/>
+                                <path class="st2" d="M614.2,113.6c-0.5-0.6-1.1-1.1-1.8-1.4c-0.7-0.3-1.5-0.5-2.4-0.5c-1.5,0-2.7,0.6-3.7,1.8v-6.6h-2.3v18.6h2.1
+		v-1.7c0.9,1.3,2.2,2,3.7,2c1.6,0,3-0.6,4.1-1.9c1.1-1.3,1.7-3,1.7-5.4c0-1-0.1-1.9-0.4-2.7C615.1,115,614.7,114.2,614.2,113.6z
+		 M612.3,122.6c-0.7,0.9-1.6,1.3-2.6,1.3c-1.2,0-2.2-0.6-2.9-1.8c-0.4-0.7-0.7-1.9-0.7-3.5c0-1.6,0.4-2.9,1.1-3.8s1.6-1.3,2.6-1.3
+		c1,0,1.8,0.4,2.5,1.3c0.7,0.8,1,2.1,1,3.9C613.4,120.5,613.1,121.8,612.3,122.6z"/>
+                                <path class="st2" d="M624.1,111.7c-1.9,0-3.4,0.6-4.5,1.9c-1.2,1.3-1.8,3-1.8,5.3c0,2.2,0.6,3.9,1.7,5.1c1.2,1.2,2.7,1.8,4.7,1.8
+		c1.6,0,2.9-0.4,3.9-1.1s1.7-1.8,2.1-3.2l-2.4-0.3c-0.3,1-0.8,1.7-1.4,2.1c-0.6,0.4-1.3,0.7-2.1,0.7c-1.1,0-2.1-0.4-2.8-1.2
+		s-1.2-1.9-1.3-3.4h10.1c0-0.3,0-0.5,0-0.6c0-2.2-0.6-4-1.7-5.2C627.4,112.3,625.9,111.7,624.1,111.7z M620.3,117.5
+		c0.1-1.2,0.5-2.1,1.2-2.8c0.7-0.7,1.6-1.1,2.6-1.1c1.2,0,2.1,0.4,2.8,1.3c0.5,0.6,0.8,1.4,0.9,2.6H620.3z"/>
+                                <path class="st2" d="M637,123.6c-0.3,0-0.6-0.1-0.8-0.2c-0.2-0.1-0.3-0.3-0.4-0.4c-0.1-0.2-0.1-0.6-0.1-1.3v-7.9h2.3V112h-2.3v-4.7
+		l-2.3,1.4v3.3h-1.7v1.8h1.7v7.8c0,1.4,0.1,2.3,0.3,2.7s0.5,0.8,1,1c0.5,0.3,1.1,0.4,1.9,0.4c0.5,0,1.1-0.1,1.7-0.2l-0.3-2
+		C637.6,123.5,637.3,123.6,637,123.6z"/>
+                                <path class="st2" d="M651.3,123.9c-0.1-0.6-0.1-1.9-0.1-4v-3c0-1,0-1.7-0.1-2.1c-0.1-0.6-0.4-1.1-0.7-1.6s-0.9-0.8-1.6-1
+		c-0.7-0.3-1.7-0.4-2.8-0.4c-1.2,0-2.2,0.2-3.1,0.5s-1.6,0.8-2,1.4s-0.8,1.4-1,2.3l2.2,0.3c0.2-1,0.6-1.6,1.1-2
+		c0.5-0.4,1.3-0.6,2.4-0.6c1.2,0,2,0.3,2.6,0.8c0.4,0.4,0.6,1,0.6,2c0,0.1,0,0.3,0,0.6c-0.9,0.3-2.2,0.6-4.1,0.8
+		c-0.9,0.1-1.6,0.2-2,0.3c-0.6,0.2-1.2,0.4-1.6,0.8c-0.5,0.3-0.9,0.8-1.2,1.3c-0.3,0.5-0.5,1.1-0.5,1.8c0,1.1,0.4,2,1.2,2.8
+		s1.9,1.1,3.4,1.1c0.9,0,1.7-0.1,2.5-0.4c0.8-0.3,1.6-0.8,2.4-1.5c0.1,0.6,0.2,1.2,0.5,1.7h2.4C651.6,125,651.4,124.5,651.3,123.9z
+		 M648.8,119.6c0,1-0.1,1.8-0.4,2.3c-0.3,0.7-0.8,1.2-1.5,1.6s-1.5,0.6-2.3,0.6c-0.9,0-1.6-0.2-2-0.6c-0.5-0.4-0.7-0.9-0.7-1.5
+		c0-0.4,0.1-0.8,0.3-1.1s0.5-0.6,0.9-0.7c0.4-0.2,1.1-0.3,2-0.5c1.7-0.2,2.9-0.5,3.7-0.9V119.6z"/>
+                            </g>
+</svg>
+                    </a>
+                    <!-- End Logo -->
+
+                    <!-- Responsive Toggle Button -->
+                    <button type="button" class="navbar-toggler btn u-hamburger"
+                            aria-label="Toggle navigation"
+                            aria-expanded="false"
+                            aria-controls="navBar"
+                            data-toggle="collapse"
+                            data-target="#navBar">
+            <span id="hamburgerTrigger" class="u-hamburger__box">
+              <span class="u-hamburger__inner"></span>
+            </span>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+
+                    <!-- Navigation -->
+                    <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse ">
+                        <ul class="navbar-nav u-header__navbar-nav my-2 my-sm-0">
+                            <!-- Home -->
+                            <li class="nav-item hs-has-mega-menu u-header__nav-item">
+                                <a id="homeMegaMenu" class="nav-link u-header__nav-link " href="/" aria-haspopup="true" aria-expanded="false">首页</a>
+
+
+                                <!-- MIDI -->
+                            <li class="nav-item hs-has-mega-menu u-header__nav-item"
+                                data-event="hover"
+                                data-animation-in="slideInUp"
+                                data-animation-out="fadeOut">
+                                <a id="midiMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle"
+                                   href="/midi" aria-haspopup="true" aria-expanded="false">MIDI 音乐</a>
+
+                                <!-- Home - Mega Menu -->
+                                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="midiMegaMenu">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-6">
+                                            <!-- Banner Image -->
+                                            <div class="u-header__banner"
+                                                 style="background-image: url(https://s.midishow.net/static/img/600x400/best-midi.jpg);">
+                                                <div class="u-header__banner-content">
+                                                    <div class="mb-4">
+                                                        <span class="u-header__banner-title">更多浏览方式</span>
+                                                        <p class="u-header__banner-text">也可通过创作者设置的标签浏览</p>
+                                                    </div>
+                                                    <a class="btn btn-primary btn-sm transition-3d-hover" href="/tag">标签索引 <span
+                                                                class="fas fa-angle-right ml-2"></span></a>
+                                                </div>
+                                                <div class="w-100 text-right text-white pr-2"
+                                                     style="position: absolute; right: 0; bottom: 0; z-index: 999">
+                                                    <small>图片拍摄自北京植物园</a></small>
+                                                </div>
+                                            </div>
+                                            <!-- End Banner Image -->
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="row u-header__mega-menu-wrapper">
+
+                                                <div class="col-sm-4">
+                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/classical-music">古典音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/pop-music">流行音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/national-music">民族音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/easy-listening-music">轻音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/movie_tv_soundtrack">影视音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/childrens-music">儿童音乐</a></li>
+                                                    </ul>
+                                                    <!-- End Links -->
+
+
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <!--<strong class="d-block mb-2">Landing</strong>-->
+
+                                                    <!-- Links -->
+                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/game-music">动漫/游戏音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/electronic-music">电子乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/country-music">乡村音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/rock-and-roll">摇滚乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/folk-music">民谣</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/latin-music">拉丁音乐</a></li>
+                                                    </ul>
+                                                    <!-- End Links -->
+
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <!--<strong class="d-block mb-2">Landing</strong>-->
+
+                                                    <!-- Links -->
+                                                    <ul class="u-header__sub-menu-nav-group mb-3">
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/rhythm-and-blues">节奏布鲁斯</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/hip-hop-and-rap">嘻哈/说唱音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/jazz-and-blues">爵士蓝调</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/religious-music">宗教音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/midi/browse/other-music">其他音乐</a></li>
+                                                        <li><a class="nav-link u-header__sub-menu-nav-link"
+                                                               href="/original-midi">原创专区 <small class="badge badge-success badge-pill ml-1">New</small></a></li>
+                                                    </ul>
+                                                    <!-- End Links -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Home - Mega Menu -->
+
+
+                            </li>
+                            <!-- End Home -->
+
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link" href="/tag">标签</a>
+                            </li>
+
+                            <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                                data-event="hover"
+                                data-animation-in="slideInUp"
+                                data-animation-out="fadeOut">
+                                <a id="membersMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="/member" aria-haspopup="true" aria-expanded="false" aria-labelledby="membersSubMenu">音乐人</a>
+
+                                <ul id="membersSubMenu" class="hs-sub-menu u-header__sub-menu" aria-labelledby="membersMenu" style="min-width: 210px;">
+                                    <li class="pl-3 pl-md-0">
+                                        <a class="nav-link u-header__sub-menu-nav-link " href="/member" ><span class="fa fa-fire text-danger mr-1" style="width: 1.4rem"></span>MIDI 红人榜</a>
+                                    </li>
+                                    <li class="pl-3 pl-md-0">
+                                        <a  class="nav-link u-header__sub-menu-nav-link " href="/hall-of-fame"><span class="fa fa-crown text-warning mr-1" style="width: 1.4rem"></span>MIDI 名人堂</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li class="nav-item u-header__nav-item">
+                                <a id="" class="nav-link u-header__nav-link " href="https://tat.midishow.com/session/sso?return_path=https%3A%2F%2Ftat.midishow.com" title="开放啦！">
+                                    讨论区                                </a>
+                            </li>
+
+                            <!-- SEARCH -->
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link " href="javascript:;" role="button" title="搜索"
+                                   aria-haspopup="true"
+                                   aria-expanded="false"
+                                   aria-controls="searchPushTop"
+                                   data-unfold-type="jquery-slide"
+                                   data-unfold-target="#searchPushTop">
+                                    <span class="fa fa-search u-btn--icon__inner"></span>
+                                </a>
+                            </li>
+                            <!-- End SEARCH -->
+                        </ul>
+                    </div>
+                    <!-- End Navigation -->
+                </nav>
+                <!-- End Nav -->
+            </div>
+        </div>
+
+</header>
+
+<main id="content" role="main">
+        <div class="container space-2 site-error">
+
+    <h1>Forbidden (#403)</h1>
+
+    <div class="alert alert-danger">
+        token已过期。请勿通过任何除网页上提供的方式之外的方法下载、试听、实验。    </div>
+
+    <p>
+        The above error occurred while the Web server was processing your request.
+    </p>
+    <p>
+        Please contact us if you think this is a server error. Thank you.
+    </p>
+
+</div>
+</main>
+
+
+
+
+    <footer class="border-top">
+        <div class="container space-1">
+            <div class="row justify-content-sm-between">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <ul class="list-inline list-group-flush list-group-borderless">
+                        <li class="list-inline-item pl-0">
+                            <a class="list-group-item-action" href="/page/about">关于</a>
+                        </li>
+                        <li class="list-inline-item pl-3">
+                            <a class="list-group-item-action" href="/help" rel="nofollow">帮助</a>
+                        </li>
+                        <li class="list-inline-item pl-3">
+                            <a class="list-group-item-action" href="/help/credit.ab" rel="nofollow">积分规则</a>
+                        </li>
+                        <li class="list-inline-item pl-3">
+                            <a class="list-group-item-action" href="/feedback?" rel="nofollow">联系我们</a>
+                        </li>
+
+                    </ul>
+                    <p class="small text-muted mb-0">&copy; 2003-2026 MidiShow.com Some Rights Reserved. </p>
+                </div>
+
+                <div class="col-md-6 align-self-md-end text-md-right mb-4 mb-sm-0">
+                    <p class="text-muted mb-1">玩MIDI音乐的你，定是多才多艺的</p>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://twitter.com/midi_show" target="_blank" rel="nofollow">
+                                <span class="fab fa-twitter btn-icon__inner"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top -->
+    <a class="js-go-to u-go-to" href="#"
+       data-position='{"bottom": 15, "right": 15 }'
+       data-type="fixed"
+       data-offset-top="400"
+       data-compensation="#header"
+       data-show-effect="slideInUp"
+       data-hide-effect="slideOutDown">
+        <span class="fas fa-arrow-up u-go-to__inner"></span>
+    </a>
+    <!-- End Go to Top -->
+<div class="modal fade" id="globalModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"></div>
+    </div>
+</div>
+
+
+<script src="https://s.midishow.net/static/vendor/jquery/dist/jquery.min.js"></script>
+<script src="https://s.midishow.net/static/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="https://s.midishow.net/static/js/msc-a11eb9762c.min.js"></script>
+<script src="https://s.midishow.net/static/js/y.m.js"></script>
+<script>jQuery(function ($) {
+$('.js-mega-menu').HSMegaMenu({event: 'hover',pageContainer: $('.container'),breakpoint: 767.98,hideTimeOut:0});
+$.HSCore.components.HSHeader.init($('#header'));
+$.HSCore.components.HSUnfold.init($('[data-unfold-target]'),{ afterOpen: function () {  $(this).find('input[type="search"]').focus(); }});
+$.HSCore.components.HSFocusState.init();
+$.HSCore.components.HSGoTo.init('.js-go-to');
+$.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+$.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+});</script>
+</body>
+</html>
