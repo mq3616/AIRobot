@@ -51,6 +51,35 @@ Typical supported interactions include:
 - [assets](/d:/Projects/AIRobot/assets)
 - [docs](/d:/Projects/AIRobot/docs)
 
+## API Key and Local Configuration
+
+Real secrets are not committed to the repository. These local-only files are already ignored:
+
+- `include/app_secrets.h`
+- `scripts/bailian.local.ps1`
+- `.serial_console_gui.json`
+
+The recommended setup is environment-variable-based injection. The build helper
+[scripts/inject_secrets.py](/d:/Projects/AIRobot/scripts/inject_secrets.py)
+automatically reads:
+
+- `WIFI_SSID`
+- `WIFI_PASSWORD`
+- `OPENAI_API_KEY`
+
+PowerShell example:
+
+```powershell
+$env:WIFI_SSID="your-ssid"
+$env:WIFI_PASSWORD="your-password"
+$env:OPENAI_API_KEY="sk-..."
+& "$env:USERPROFILE\.platformio\penv\Scripts\python.exe" -m platformio run -e esp32-s3-devkit
+```
+
+If you prefer a local fallback, copy
+[include/app_secrets.example.h](/d:/Projects/AIRobot/include/app_secrets.example.h)
+to `include/app_secrets.h` and fill in your local values. That file is ignored by Git and will not be pushed.
+
 ## Related Docs
 
 - Serial console GUI: [docs/serial-console-gui.md](/d:/Projects/AIRobot/docs/serial-console-gui.md)
