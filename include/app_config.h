@@ -33,6 +33,7 @@ constexpr char BAILIAN_TTS_PATH[] =
     "/api/v1/services/aigc/multimodal-generation/generation";
 constexpr char BAILIAN_CHAT_PATH[] = "/compatible-mode/v1/chat/completions";
 constexpr char BAILIAN_CHAT_MODEL[] = "qwen-flash";
+constexpr char BAILIAN_ASR_MODEL[] = "qwen3-asr-flash";
 constexpr char BAILIAN_TTS_MODEL[] = "qwen3-tts-flash";
 constexpr char BAILIAN_TTS_VOICE[] = "Cherry";
 constexpr char BAILIAN_TTS_LANGUAGE[] = "Chinese";
@@ -43,6 +44,8 @@ constexpr size_t TTS_HEADER_BUFFER_LIMIT = 512;
 constexpr size_t TTS_JSON_BUFFER_LIMIT = 4096;
 constexpr size_t CHAT_TEXT_LIMIT = 400;
 constexpr size_t CHAT_JSON_BUFFER_LIMIT = 8192;
+constexpr size_t ASR_AUDIO_DATA_URL_LIMIT = 128 * 1024;
+constexpr size_t ASR_JSON_BUFFER_LIMIT = 12288;
 constexpr uint32_t WIFI_CONNECT_TIMEOUT_MS = 20000;
 constexpr uint32_t WIFI_RETRY_INTERVAL_MS = 5000;
 constexpr uint32_t RECORD_DURATION_MS = 4000;

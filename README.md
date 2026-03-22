@@ -2,6 +2,50 @@
 
 [中文](./README.md) | [English](./README_EN.md)
 
+## 最近更新
+
+本轮迭代新增了“手机控制 AIRobot”的完整链路，核心更新如下：
+
+- 固件新增内置 Web 控制页与 HTTP API
+  - `GET /api/status`
+  - `POST /api/command`
+  - `POST /api/volume`
+  - `POST /api/accompaniment`
+  - `POST /api/melody/play`
+  - `POST /api/melody/stop`
+  - `POST /api/tts`
+  - `POST /api/chat`
+  - `POST /api/asr-chat`
+- 设备接入 `mDNS`，局域网内可通过 `http://airobot.local/` 访问 Web 控制页
+- 串口命令和 HTTP 控制共用同一套设备侧执行逻辑，避免两套行为分叉
+- 新增 Android 控制端工程 [`airobot_mobile`](./airobot_mobile)
+  - 自动发现 AIRobot
+  - 自动回退到可用 IP
+  - 长按录音、松开发送
+  - 文本聊天、TTS、音乐控制、音量调节
+  - 显示连接状态与语音阶段
+- 语音链路新增连续对话上下文，语音对话不再总是单轮问答
+- LLM 回复策略已收敛为“尽量简短”，更适合机器人播报
+
+### 语音链路现状
+
+当前手机语音链路为：
+
+`Android App 录音 -> AIRobot /api/asr-chat -> Bailian ASR -> Chat -> TTS -> 机器人扬声器`
+
+为提高稳定性，当前已做这些保护：
+
+- Android 端录音时长限制为 5 秒以内
+- 上传音频使用压缩格式，避免原始 WAV 过大导致设备端内存压力
+- 固件侧会检查上传大小和可用堆内存，超限时直接拒绝而不是硬扛
+- 上传缓冲在请求结束后立即释放
+
+### 当前已知限制
+
+- Android 端 `.local` 解析不稳定时，会自动回退到局域网 IP
+- Web 页面在部分手机浏览器里对麦克风权限支持不稳定，因此手机端优先推荐使用 Android App
+- 百炼 ASR 的输入格式存在兼容边界，当前仍在持续联调；若语音识别失败，请优先查看串口/控制台输出的 ASR 原始错误
+
 AIRobot 是一个基于 ESP32-S3 的嵌入式 AI 语音机器人项目，目标是把语音交互、表情反馈、音乐播放和桌面调试工具整合到同一套可落地的机器人原型中。
 
 ## 项目背景

@@ -1,8 +1,9 @@
-#include "chat.h"
+#include "asr.h"
 
 #include <WiFiClientSecure.h>
 
 #include <cstdlib>
+#include <vector>
 
 #include "app_config.h"
 
@@ -65,7 +66,7 @@ bool read_http_headers(WiFiClientSecure& client, int& status_code, bool& is_chun
     status_line.trim();
   } while (status_line.isEmpty() && client.connected());
 
-  Serial.print("Chat raw status line: ");
+  Serial.print("ASR raw status line: ");
   Serial.println(status_line);
 
   if (!status_line.startsWith("HTTP/1.1 ") && !status_line.startsWith("HTTP/1.0 ")) {
@@ -105,6 +106,74 @@ bool read_http_headers(WiFiClientSecure& client, int& status_code, bool& is_chun
 
   assign_error(error_message, "HTTP headers truncated");
   return false;
+}
+
+bool read_http_body(WiFiClientSecure& client, bool is_chunked, size_t content_length,
+                    size_t max_length, String& body, String* error_message) {
+  body = "";
+
+  if (is_chunked) {
+    while (true) {
+      String chunk_line = client.readStringUntil('\n');
+      chunk_line.trim();
+      const int semicolon_index = chunk_line.indexOf(';');
+      if (semicolon_index >= 0) {
+        chunk_line = chunk_line.substring(0, semicolon_index);
+      }
+
+      const size_t chunk_size =
+          static_cast<size_t>(strtoul(chunk_line.c_str(), nullptr, 16));
+      if (chunk_size == 0) {
+        while (client.connected()) {
+          String trailer = client.readStringUntil('\n');
+          trailer.trim();
+          if (trailer.isEmpty()) {
+            break;
+          }
+        }
+        return true;
+      }
+
+      String chunk;
+      chunk.reserve(chunk_size);
+      while (chunk.length() < chunk_size) {
+        const int ch = client.read();
+        if (ch < 0) {
+          assign_error(error_message, "chunked body read timed out");
+          return false;
+        }
+        chunk += static_cast<char>(ch);
+      }
+      body += chunk;
+      if (body.length() > max_length) {
+        assign_error(error_message, "response body too large");
+        return false;
+      }
+
+      char crlf[2] = {0, 0};
+      if (client.readBytes(crlf, sizeof(crlf)) != sizeof(crlf)) {
+        assign_error(error_message, "chunk trailer missing");
+        return false;
+      }
+    }
+  }
+
+  size_t remaining = content_length;
+  while (remaining > 0) {
+    const int ch = client.read();
+    if (ch < 0) {
+      assign_error(error_message, "response body read timed out");
+      return false;
+    }
+    body += static_cast<char>(ch);
+    --remaining;
+    if (body.length() > max_length) {
+      assign_error(error_message, "response body too large");
+      return false;
+    }
+  }
+
+  return true;
 }
 
 String decode_json_string_fragment(const String& value) {
@@ -188,11 +257,11 @@ bool extract_json_string_value(const String& json, const char* key, String& valu
   return false;
 }
 
-bool extract_assistant_reply(const String& json, String& assistant_reply) {
+bool extract_transcript(const String& json, String& transcript) {
   int message_index = json.indexOf("\"message\"");
   while (message_index >= 0) {
-    if (extract_json_string_value(json, "content", assistant_reply, message_index) &&
-        !assistant_reply.isEmpty()) {
+    if (extract_json_string_value(json, "content", transcript, message_index) &&
+        !transcript.isEmpty()) {
       return true;
     }
     message_index = json.indexOf("\"message\"", message_index + 1);
@@ -200,159 +269,80 @@ bool extract_assistant_reply(const String& json, String& assistant_reply) {
   return false;
 }
 
-bool read_http_body(WiFiClientSecure& client, bool is_chunked, size_t content_length,
-                    size_t max_length, String& body, String* error_message) {
-  body = "";
+String base64_encode(const uint8_t* data, size_t length) {
+  static constexpr char kAlphabet[] =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  String encoded;
+  encoded.reserve(((length + 2) / 3) * 4);
 
-  if (is_chunked) {
-    while (true) {
-      String chunk_line = client.readStringUntil('\n');
-      chunk_line.trim();
-      const int semicolon_index = chunk_line.indexOf(';');
-      if (semicolon_index >= 0) {
-        chunk_line = chunk_line.substring(0, semicolon_index);
-      }
+  for (size_t i = 0; i < length; i += 3) {
+    const uint32_t octet_a = data[i];
+    const uint32_t octet_b = (i + 1 < length) ? data[i + 1] : 0;
+    const uint32_t octet_c = (i + 2 < length) ? data[i + 2] : 0;
+    const uint32_t triple = (octet_a << 16) | (octet_b << 8) | octet_c;
 
-      const size_t chunk_size = static_cast<size_t>(strtoul(chunk_line.c_str(), nullptr, 16));
-      if (chunk_size == 0) {
-        while (client.connected()) {
-          String trailer = client.readStringUntil('\n');
-          trailer.trim();
-          if (trailer.isEmpty()) {
-            break;
-          }
-        }
-        return true;
-      }
-
-      String chunk;
-      chunk.reserve(chunk_size);
-      while (chunk.length() < chunk_size) {
-        const int ch = client.read();
-        if (ch < 0) {
-          assign_error(error_message, "chunked body read timed out");
-          return false;
-        }
-        chunk += static_cast<char>(ch);
-      }
-      body += chunk;
-      if (body.length() > max_length) {
-        assign_error(error_message, "response body too large");
-        return false;
-      }
-
-      char crlf[2] = {0, 0};
-      if (client.readBytes(crlf, sizeof(crlf)) != sizeof(crlf)) {
-        assign_error(error_message, "chunk trailer missing");
-        return false;
-      }
-    }
+    encoded += kAlphabet[(triple >> 18) & 0x3F];
+    encoded += kAlphabet[(triple >> 12) & 0x3F];
+    encoded += (i + 1 < length) ? kAlphabet[(triple >> 6) & 0x3F] : '=';
+    encoded += (i + 2 < length) ? kAlphabet[triple & 0x3F] : '=';
   }
 
-  size_t remaining = content_length;
-  while (remaining > 0) {
-    const int ch = client.read();
-    if (ch < 0) {
-      assign_error(error_message, "response body read timed out");
-      return false;
-    }
-    body += static_cast<char>(ch);
-    --remaining;
-    if (body.length() > max_length) {
-      assign_error(error_message, "response body too large");
-      return false;
-    }
-  }
-
-  return true;
-}
-
-String build_messages_json(const String& system_prompt,
-                           const std::vector<ChatMessage>& messages) {
-  String payload =
-      String("{\"model\":\"") + AppConfig::BAILIAN_CHAT_MODEL + "\",\"messages\":[";
-  payload += "{\"role\":\"system\",\"content\":\"";
-  payload += escape_json_string(system_prompt);
-  payload += "\"}";
-
-  for (const ChatMessage& message : messages) {
-    String role = message.role;
-    role.trim();
-    role.toLowerCase();
-    if (role != "user" && role != "assistant") {
-      continue;
-    }
-
-    String content = message.content;
-    content.trim();
-    if (content.isEmpty()) {
-      continue;
-    }
-    if (content.length() > AppConfig::CHAT_TEXT_LIMIT) {
-      content = content.substring(0, AppConfig::CHAT_TEXT_LIMIT);
-    }
-
-    payload += ",{\"role\":\"";
-    payload += role;
-    payload += "\",\"content\":\"";
-    payload += escape_json_string(content);
-    payload += "\"}";
-  }
-
-  payload += "]}";
-  return payload;
+  return encoded;
 }
 
 }  // namespace
 
-bool chat_is_configured() {
+bool asr_is_configured() {
   return strlen(AppConfig::CLOUD_API_KEY_VALUE) > 0;
 }
 
-bool chat_complete_once(const String& system_prompt, const String& user_text,
-                        String& assistant_reply, String* error_message) {
-  String system_clean = system_prompt;
-  system_clean.trim();
-  String user_clean = user_text;
-  user_clean.trim();
-  if (user_clean.isEmpty()) {
-    assign_error(error_message, "empty user text");
+bool asr_transcribe_audio_bytes(const String& mime_type,
+                                const std::vector<uint8_t>& audio_bytes,
+                                String& transcript,
+                                String* error_message) {
+  transcript = "";
+
+  String mime_clean = mime_type;
+  mime_clean.trim();
+  mime_clean.toLowerCase();
+  if (audio_bytes.empty()) {
+    assign_error(error_message, "empty audio payload");
     return false;
   }
-  std::vector<ChatMessage> messages = {{"user", user_clean}};
-  return chat_complete_with_messages(system_clean, messages, assistant_reply,
-                                     error_message);
-}
+  if (audio_bytes.size() > AppConfig::ASR_AUDIO_DATA_URL_LIMIT) {
+    assign_error(error_message, "audio payload too large");
+    return false;
+  }
+  if (mime_clean.isEmpty()) {
+    mime_clean = "audio/webm";
+  }
 
-bool chat_complete_with_messages(const String& system_prompt,
-                                 const std::vector<ChatMessage>& messages,
-                                 String& assistant_reply,
-                                 String* error_message) {
-  assistant_reply = "";
-
-  if (!chat_is_configured()) {
+  if (!asr_is_configured()) {
     assign_error(error_message, "cloud API key is empty");
     return false;
   }
 
-  String system_clean = system_prompt;
-  system_clean.trim();
-  if (messages.empty()) {
-    assign_error(error_message, "empty message list");
-    return false;
-  }
+  const String audio_data_url =
+      String("data:") + mime_clean + ";base64," +
+      base64_encode(audio_bytes.data(), audio_bytes.size());
 
-  const String payload = build_messages_json(system_clean, messages);
+  const String payload =
+      String("{\"model\":\"") + AppConfig::BAILIAN_ASR_MODEL +
+      "\",\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"input_audio\","
+      "\"input_audio\":{\"data\":\"" +
+      escape_json_string(audio_data_url) +
+      "\"}}]}],\"stream\":false,\"asr_options\":{\"language\":\"zh\",\"enable_itn\":true}}";
 
   WiFiClientSecure client;
   client.setInsecure();
   client.setTimeout(AppConfig::HTTPS_RESPONSE_TIMEOUT_MS);
 
-  Serial.printf("Bailian chat request: %u messages\n",
-                static_cast<unsigned>(messages.size()));
+  Serial.printf("Bailian ASR request: mime=%s audio=%u bytes\n",
+                mime_clean.c_str(),
+                static_cast<unsigned>(audio_bytes.size()));
   if (!client.connect(AppConfig::BAILIAN_API_HOST, AppConfig::BAILIAN_API_PORT,
                       AppConfig::HTTPS_CONNECT_TIMEOUT_MS)) {
-    assign_error(error_message, "Bailian chat connect failed");
+    assign_error(error_message, "Bailian ASR connect failed");
     return false;
   }
 
@@ -376,7 +366,7 @@ bool chat_complete_with_messages(const String& system_prompt,
   }
 
   String response_body;
-  if (!read_http_body(client, is_chunked, content_length, AppConfig::CHAT_JSON_BUFFER_LIMIT,
+  if (!read_http_body(client, is_chunked, content_length, AppConfig::ASR_JSON_BUFFER_LIMIT,
                       response_body, error_message)) {
     client.stop();
     return false;
@@ -386,15 +376,19 @@ bool chat_complete_with_messages(const String& system_prompt,
 
   if (status_code != 200) {
     assign_error(error_message,
-                 String("Bailian chat HTTP ") + status_code + ": " + response_body);
+                 String("Bailian ASR HTTP ") + status_code + ": " + response_body);
     return false;
   }
 
-  if (!extract_assistant_reply(response_body, assistant_reply)) {
-    assign_error(error_message, String("Bailian chat parse failed: ") + response_body);
+  if (!extract_transcript(response_body, transcript)) {
+    assign_error(error_message, String("Bailian ASR parse failed: ") + response_body);
     return false;
   }
 
-  assistant_reply.trim();
-  return !assistant_reply.isEmpty();
+  transcript.trim();
+  if (transcript.isEmpty()) {
+    assign_error(error_message, "empty transcript");
+    return false;
+  }
+  return true;
 }
